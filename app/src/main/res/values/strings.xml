@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyPlayAndroid</string>
+    <string name="bad_network_view_tip">Your network is not to force, can tap the screen to reload</string>
+    <string name="failed_load_data">Failed to load data</string>
+</resources>

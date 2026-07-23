@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/wall"
+    android:focusable="true"
+    android:foreground="?android:selectableItemBackground"
+    android:gravity="center"
+    android:orientation="vertical">
+<!--    android:foreground="?android:selectableItemBackground"：
+给当前布局的前景（Foreground）叠加一个系统的水波纹点击效果（Material Design 风格）
+当用户点击这个空白区域时，会显示一个从点击中心向外扩散的涟漪动画，明确告知用户“你点到了这个地方”-->
+
+<!--    android:focusable="true"：
+允许该视图获取焦点（在电视或键盘操作场景下）。
+在触屏手机中，配合点击事件使用，可以确保它能拦截触摸事件，避免点击穿透到底层的列表。-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_200"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/play_error" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:text="@string/bad_network_view_tip"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/sp_13" />
+
+</LinearLayout>

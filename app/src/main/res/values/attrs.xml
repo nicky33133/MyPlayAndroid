@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--直接配置 TitleBar 的标题、背景色等-->
+<resources>
+<!--    标题栏属性组-->
+    <declare-styleable name="TitleBar">
+        <attr name="titleName" format="string"/>
+<!--        态控制标题栏左侧“返回箭头”的显示与隐藏-->
+        <attr name="backImageVisible" format="boolean"/>
+    </declare-styleable>
+
+<!-- FloatingMenu 悬浮菜单属性组   -->
+    <declare-styleable name="FloatingMenu">
+<!--        接受尺寸值（如 10dp、16sp）。用于设置悬浮菜单中各个子按钮之间的间距-->
+        <attr name="fmm_button_interval" format="dimension"/>
+<!--        接受资源 ID 引用（如 @drawable/bg_cover 或 @color/black）。通常用于设置菜单展开时，背景遮罩层的资源-->
+        <attr name="fmm_cover" format="reference"/>
+<!--        接受颜色值（如 #FF6200EE 或 @color/purple）。用于给整个悬浮菜单的背景着色（类似 ImageView 的 tint 属性）-->
+        <attr name="fmm_backgroundTint" format="color"/>
+<!--        枚举类型。开发者只能从给定的四个选项中挑选一个，不能随意输入字符串。-->
+        <attr name="fmm_floating_direction" format="enum">
+            <enum name="up" value="0"/>
+            <enum name="left" value="1"/>
+            <enum name="down" value="2"/>
+            <enum name="right" value="3"/>
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="VectorDrawablePath">
+        <!-- The color to fill the path if not defined implies no fill. -->
+        <attr name="fillColor" format="color" />
+        <!-- The specification of the operations that define the path. -->
+        <attr name="pathData" format="string" />
+    </declare-styleable>
+
+</resources>
