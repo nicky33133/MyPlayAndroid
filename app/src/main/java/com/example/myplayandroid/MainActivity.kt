@@ -1,5 +1,7 @@
 package com.example.myplayandroid
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,5 +14,12 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+    }
+
+    companion object{
+        fun actionStart(context: Context){
+            val intent= Intent(context, MainActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 }

@@ -3,8 +3,6 @@ package com.example.myplayandroid
 import android.content.BroadcastReceiver
 import android.os.Bundle
 import android.view.View
-import com.example.myplayandroid.article.collect.ArticleBroadCast
-import com.example.myplayandroid.view.base.Ice.BaseFragment
 
 //这个类的作用：在文章收藏状态发生变化时，自动刷新当前页面的数据
 abstract class ArticleCollectBaseFragment : BaseFragment() {

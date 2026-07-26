@@ -52,4 +52,8 @@ class TitleBar @JvmOverloads constructor(
         mImgBack.isVisible=imageVisible
 
     }
+
+    override fun onClick(v: View?) {
+
+    }
 }
