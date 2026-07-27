@@ -11,7 +11,7 @@
     <!-- 字体颜色 -->
     <color name="text_color_dark">#464646</color>
     <color name="text_color">#5A5A5A</color>
-    <color name="icon_selected">#25C84C</color>
+
     <color name="text_color_black">#202020</color>
     <!-- 下拉刷新颜色 -->
     <color name="refresh">#F8F8F8</color>
@@ -20,6 +20,7 @@
 
     <!-- 灰白 -->
     <color name="grayWhite">#e9e5e5</color>
+
 
     <color name="secondary_text">#757575</color>
     <color name="wall">#fff5f5f5</color>
@@ -31,4 +32,13 @@
     <color name="to_top_pressed">#38B155</color>
 
     <color name="dialog_content_bg">#F3F3F3</color>
+
+
+    <!--筛选框-->
+    <color name="icon_normal">#D1D1D1</color>
+
+    <color name="icon_selected">#25C84C</color>
+    <color name="home_bottom_bg_color">#272727</color>
+    <color name="home_bottom_mask_start">#00F7F7F7</color>
+    <color name="home_bottom_mask_end">#F7F7F7</color>
 </resources>

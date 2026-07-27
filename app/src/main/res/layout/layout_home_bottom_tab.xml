@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主界面四个主要按钮-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/flHomeFragment"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_90"
+        android:layout_gravity="bottom"
+        android:background="@drawable/home_bottom_mask"/>
+
+
+    <!--四个基本按钮，首页，项目，公众号，我的-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="@dimen/dp_30"
+        android:layout_marginVertical="@dimen/dp_15"
+        android:background="@drawable/home_bottom_bg"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/llHomeATHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_3"
+            android:gravity="center"
+            android:text="@string/home_page"
+            android:textColor="@color/color_bottom_tv"
+            android:textSize="@dimen/sp_11"
+            app:drawableTopCompat="@drawable/selector_one" />
+
+<!-- 使用 app: 前缀，系统会自动处理不同 Android 版本的差异，确保矢量图在任何 API 级别都能正常显示    -->
+<!-- drawableTopCompat（把图片放在文字上方）-->
+
+        <TextView
+            android:id="@+id/llHomeATCalendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_3"
+            android:gravity="center"
+            android:text="@string/project"
+            android:textColor="@color/color_bottom_tv"
+            android:textSize="@dimen/sp_11"
+            app:drawableTopCompat="@drawable/selector_two" />
+
+        <TextView
+            android:id="@+id/llHomeATObject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_3"
+            android:gravity="center"
+            android:text="@string/official_account"
+            android:textColor="@color/color_bottom_tv"
+            android:textSize="@dimen/sp_11"
+            app:drawableTopCompat="@drawable/selector_three" />
+
+        <TextView
+            android:id="@+id/llHomeATMy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_3"
+            android:gravity="center"
+            android:text="@string/mine"
+            android:textColor="@color/color_bottom_tv"
+            android:textSize="@dimen/sp_11"
+            app:drawableTopCompat="@drawable/selector_four" />
+
+    </LinearLayout>
+
+</FrameLayout>
