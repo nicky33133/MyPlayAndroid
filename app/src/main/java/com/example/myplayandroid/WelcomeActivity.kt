@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.core.view.base.lce.BaseActivity
 import com.example.myplayandroid.databinding.ActivityWelcomeBinding
+import com.example.myplayandroid.main.MainActivity
 
 class WelcomeActivity : BaseActivity(), View.OnClickListener{
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,6 +86,10 @@ class WelcomeActivity : BaseActivity(), View.OnClickListener{
         animationSet.setAnimationListener(animationListener)
     }
 
+    override fun initData() {
+        TODO("Not yet implemented")
+    }
+
     override fun initView() {
         initAnimation()//动画初始化
         binding.ivWelcomeBg.setOnClickListener (this)
@@ -106,6 +111,7 @@ class WelcomeActivity : BaseActivity(), View.OnClickListener{
     //自定义跳转方法
     private fun jump(){
         MainActivity.actionStart(this)
+        finish() //销毁欢迎页
     }
 
     override fun onClick(v: View?) {//点击

@@ -11,6 +11,9 @@
         android:layout_height="match_parent"
         android:id="@+id/flHomeFragment"/>
 
+<!--    界面的遮罩-->
+<!--    让显示的内容越来越来淡，本质是图片的透明度不一样-->
+<!--    暗色模式下适配，改变图片-->
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_90"

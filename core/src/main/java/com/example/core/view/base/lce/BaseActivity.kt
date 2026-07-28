@@ -6,7 +6,7 @@ import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 
 @SuppressLint("Registered")
-abstract class BaseActivity: AppCompatActivity(), ILce,BaseActivityInit {
+abstract class BaseActivity: AppCompatActivity(), BaseActivityInit {
     override fun onCreate(
         savedInstanceState: Bundle?,
     ) {

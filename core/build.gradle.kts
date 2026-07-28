@@ -11,7 +11,6 @@ android {
 
     defaultConfig {
         minSdk = 24
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -32,6 +31,21 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    //启用viewBinding
+    buildFeatures {
+        viewBinding = true
+    }
+
+//    allprojects {
+//        repositories {
+//
+//
+////            maven { uri("https://sdk-mirror.com" )}
+////            google()
+//            mavenCentral()
+//        }
+//    }
 }
 
 dependencies {
@@ -41,8 +55,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
     //MMKV
     implementation ("com.tencent:mmkv:2.2.2")
+    //Brvah
+//    implementation("com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4")
 
 }

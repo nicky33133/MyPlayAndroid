@@ -2,7 +2,7 @@
     <string name="app_name">MyPlayAndroid</string>
     <string name="bad_network_view_tip">Your network is not to force, can tap the screen to reload</string>
     <string name="failed_load_data">Failed to load data</string>
-    <string name="exit_program">Press again to exit the program</string>
+    <string name="exit_program">在按一次退出程序</string>
 
 
     <string name="home_page">Home</string>
@@ -10,4 +10,17 @@
     <string name="official_account">Official</string>
     <string name="mine">Mine</string>
 
+
+    <string name="log_out">Sign out</string>
+
+
+    <string name="mine_points">My scores</string>
+    <string name="mine_blog">My blog</string>
+    <string name="mine_nuggets">Nuggets</string>
+    <string name="mine_github">My Github</string>
+    <string name="github">Github</string>
+    <string name="browsing_history">Browsing History</string>
+    <string name="about_me">About me</string>
+    <string name="my_share">My Share</string>
+    <string name="my_collection">My collection</string>
 </resources>

@@ -6,8 +6,8 @@ import android.view.ViewGroup
 
 //在Activity或Fragment中初始化需要的函数。
 interface BaseInit{
-//    fun initData()//加载数据
     fun initView()//加载视图
+    fun initData()//加载数据
 }
 interface BaseActivityInit: BaseInit{
     //返回自己的界面布局

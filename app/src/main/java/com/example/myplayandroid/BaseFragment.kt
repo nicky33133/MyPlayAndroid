@@ -15,20 +15,17 @@ import com.scwang.smart.refresh.layout.util.SmartUtil.dp2px
 
 //抽象方法
 //所有Fragment的基类
-abstract class BaseFragment : Fragment(), ILce, BaseFragmentInit {
+abstract class BaseFragment : Fragment(), BaseFragmentInit {
 
     private var defaultLce: ILce? = null
     private var loadErrorView: View? = null
     private var badNetworkView: View? = null
     private var noContentView: View? = null
     private var loading: View? = null
-
-
     //protected：访问修饰符。表示该函数对当前类及其子类可见
     protected open fun isHaveHeadMargin(): Boolean{
         return true
     }
-
 
     //布局叠加
     override fun onCreateView(
@@ -36,12 +33,11 @@ abstract class BaseFragment : Fragment(), ILce, BaseFragmentInit {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         //部分一：创建容器和View
         //创建一个容器，该容器是FrameLayout的类型，FrameLayout实现简单，性能最高
         val frameLayout=FrameLayout(requireContext())
         //BaseFragment是所有Fragment的基类，引入跟布局layout_lce
-        val lce= View.inflate(context, R.layout.layout_lce,null)
+//        val lce= View.inflate(context, R.layout.layout_lce,null)
         //创建 FrameLayout.LayoutParams
         //作用是：往 FrameLayout 里放一个东西，这个东西的宽和高都强行跟父容器（FrameLayout）一样大
         //可以通过代码的方式设置边距
@@ -51,8 +47,6 @@ abstract class BaseFragment : Fragment(), ILce, BaseFragmentInit {
             FrameLayout.LayoutParams.MATCH_PARENT)
         //获取当前屏幕方向（isPort）
         val isPort=resources.configuration.orientation== Configuration.ORIENTATION_PORTRAIT
-
-
         //部分二:设置view的边距
         params.setMargins(//setMargins设置边距
             0,
@@ -66,7 +60,7 @@ abstract class BaseFragment : Fragment(), ILce, BaseFragmentInit {
             0,
             0
         )
-        lce.layoutParams=params
+//        lce.layoutParams=params
 
 
         //部分三：往容器里添加view
@@ -74,19 +68,17 @@ abstract class BaseFragment : Fragment(), ILce, BaseFragmentInit {
         val content=getLayoutView(inflater,container,false)
         //下面是往容器里添加View
         frameLayout.addView(content)//内容view
-        frameLayout.addView(lce)//状态view
-        onCreateView(lce)
+//        frameLayout.addView(lce)//状态view
+//        onCreateView(lce)
 
         //部分四：返回容器
         return frameLayout//返回frameLayout这个容器
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()//初始化子类自己的 UI 控件
-//        initData()//初始化数据
+        initData()//初始化数据
     }
 
     //作用：把“加载中 → 显示内容 → 显示错误”的状态切换代码全部封装起来
@@ -146,26 +138,6 @@ abstract class BaseFragment : Fragment(), ILce, BaseFragmentInit {
         return view//返回传入的 View
     }
 
-//    //复写接口ILce的方法，有关加载过程的
-//    override fun startLoading() {
-//        defaultLce?.startLoading()
-//    }
-//
-//    override fun loadFinished() {
-//        defaultLce?.loadFinished()
-//    }
-//
-//    override fun showLoadErrorView(tip: String) {
-//        defaultLce?.showLoadErrorView(tip)
-//    }
-//
-//    override fun showBadNetworkView(listener: View.OnClickListener) {
-//        defaultLce?.showBadNetworkView(listener)
-//    }
-//
-//    override fun showNoContentView(tip: String) {
-//        defaultLce?.showNoContentView(tip)
-//    }
 
 }
 

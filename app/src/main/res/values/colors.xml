@@ -5,7 +5,7 @@
     <color name="colorAccent">#41DF67</color>
     <color name="colorLoading">#41DF67</color>
     <!-- 白色 -->
-    <color name="white">#ffffff</color>
+    <color name="white">#000000</color>
     <!-- 浅白色 -->
     <color name="plain">#CDCDCD</color>
     <!-- 字体颜色 -->
@@ -36,9 +36,25 @@
 
     <!--筛选框-->
     <color name="icon_normal">#D1D1D1</color>
-
+<!--按钮文字颜色-->
     <color name="icon_selected">#25C84C</color>
+
     <color name="home_bottom_bg_color">#272727</color>
-    <color name="home_bottom_mask_start">#00F7F7F7</color>
-    <color name="home_bottom_mask_end">#F7F7F7</color>
+
+<!--    <color name="home_bottom_mask_start">#00F7F7F7</color>-->
+<!--    <color name="home_bottom_mask_end">#F7F7F7</color>-->
+
+<!--   亮色模式 -->
+    <color name="home_bottom_mask_start">#00FFFFFF</color>   <!-- 全透明 -->
+    <color name="home_bottom_mask_end">#CCFFFFFF</color>    <!-- 半透明白 -->
+
+
+    <color name="exit_login_normal_stroke">#FA2525</color>
+    <color name="exit_login_normal_solid">#FA2525</color>
+
+
+    <color name="exit_login_pressed_stroke">#D61616</color>
+    <color name="exit_login_pressed_solid">#D61616</color>
+
+    <color name="profile_icon">#000000</color>
 </resources>

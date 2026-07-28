@@ -8,7 +8,6 @@
     android:fitsSystemWindows="true"
     android:minHeight="@dimen/dp_70">
 
-
     <ImageView
         android:layout_width="@dimen/dp_40"
         android:layout_height="@dimen/dp_40"
@@ -17,15 +16,6 @@
         android:backgroundTint="@color/white"
         android:paddingVertical="@dimen/dp_8"
         android:src="@drawable/img_back"/>
-
-    <ImageView
-        android:layout_width="@dimen/dp_40"
-        android:layout_height="@dimen/dp_40"
-        android:id="@+id/imgRight"
-        android:layout_gravity="center_vertical|right"
-        android:paddingVertical="@dimen/dp_40"
-        android:visibility="gone"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,17 +25,13 @@
         android:textColor="@color/white"
         android:textSize="@dimen/sp_18"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_40"
-        android:id="@+id/txtRight"
-        android:layout_gravity="center_vertical|right"
-        android:gravity="center"
-        android:padding="@dimen/dp_8"
-        android:textColor="@color/text_click_color"
-        android:textSize="@dimen/sp_16"
-        android:visibility="gone"
-        tools:ignore="RtlSymmetry"/>
-
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:id="@+id/imgAnother"
+            android:layout_gravity="end|center_vertical"
+            android:backgroundTint="@color/white"
+            android:paddingVertical="@dimen/dp_8"
+            android:src="@drawable/another"/>
 
 </FrameLayout>

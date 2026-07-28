@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.maven
+
 pluginManagement {
     repositories {
         google {
@@ -24,9 +26,13 @@ pluginManagement {
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
     repositories {
         google()
         mavenCentral()
+        //bravh
+//        maven{"http://jitpack.io"}
+
         // 添加阿里云镜像
         maven (url ="https://maven.aliyun.com/repository/public" )
         maven ( url ="https://maven.aliyun.com/repository/google")
