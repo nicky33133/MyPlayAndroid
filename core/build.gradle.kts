@@ -56,7 +56,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     //MMKV
-    implementation ("com.tencent:mmkv:2.2.2")
+    implementation ("com.tencent:mmkv:1.3.4")
     //Brvah
 //    implementation("com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4")
 

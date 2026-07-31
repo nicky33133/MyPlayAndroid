@@ -5,7 +5,7 @@
     <color name="colorAccent">#41DF67</color>
     <color name="colorLoading">#41DF67</color>
     <!-- 白色 -->
-    <color name="white">#000000</color>
+    <color name="white">#ffffff</color>
     <!-- 浅白色 -->
     <color name="plain">#CDCDCD</color>
     <!-- 字体颜色 -->
@@ -57,4 +57,31 @@
     <color name="exit_login_pressed_solid">#D61616</color>
 
     <color name="profile_icon">#000000</color>
+
+
+
+    <color name="grayWhites">#F8F8F8</color>
+
+
+    <color name="colorBackground">#000000</color>
+
+    <color name="floatBackground">#353535</color>
+
+    <color name="login_normal_solid">#ff1E1E21</color>
+    <color name="login_normal_stroke">#14e0e0f0</color>
+
+    <color name="login_pressed_solid">#060608</color>
+    <color name="login_pressed_stroke">#14e0e0f0</color>
+    <color name="article_bg">#232222</color>
+    <color name="article_pressed">#151515</color>
+
+    <color name="shortcut_icon">#BFBFBF</color>
+
+    <color name="almanac_fragment_content_dividline_color">#FF57575F</color>
+    <color name="lunar_fragment_content_gb">#FF1E1E21</color>
+    <color name="almanac_fragment_content_textcolor1">#FFE0E0F0</color>
+    <color name="almanac_fragment_content_textcolor3">#FD7B72</color>
+    <color name="article_share_bg">#222222</color>
+    <color name="article_share_item_bg">#2F2F2F</color>
+    <color name="article_share_icon">#E9E9E9</color>
 </resources>

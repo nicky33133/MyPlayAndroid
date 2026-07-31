@@ -102,7 +102,10 @@ dependencies {
     // 包含 ClassicsHeader 等内置 Header
     implementation("com.scwang.smartrefresh:SmartRefreshHeader:1.1.3")
     //MMKV
-    implementation("com.tencent:mmkv:2.4.0")
+    //官方提示，直接使用 1.3.x 的最新稳定版，它完美支持 32 位和 64 位
+    implementation("com.tencent:mmkv:1.3.4")
+    //BaseQuickAdapter 是开源库 BRVAH (BaseRecyclerViewAdapterHelper) 中的核心类
+    implementation ("com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4")
 
 
 }

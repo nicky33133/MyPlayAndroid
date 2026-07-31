@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyPlayAndroid</string>
+    <string name="app_name">玩安卓</string>
     <string name="bad_network_view_tip">Your network is not to force, can tap the screen to reload</string>
     <string name="failed_load_data">Failed to load data</string>
     <string name="exit_program">在按一次退出程序</string>
@@ -23,4 +23,7 @@
     <string name="about_me">About me</string>
     <string name="my_share">My Share</string>
     <string name="my_collection">My collection</string>
+
+    <string name="no_login">Not Logged</string>
+    <string name="click_login">Click to login</string>
 </resources>

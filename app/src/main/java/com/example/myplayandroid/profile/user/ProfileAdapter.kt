@@ -1,43 +1,47 @@
 package com.example.myplayandroid.profile.user
 
+import android.app.Activity
 import android.content.Context
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import com.example.core.view.base.lce.BaseRecyclerAdapter
+import android.widget.LinearLayout
+import com.blankj.utilcode.util.ToastUtils
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.example.myplayandroid.R
 import com.example.myplayandroid.databinding.AdapterProfileBinding
 
-
-class ProfileAdapter (
-    private val mContext: Context,
-    private val profileItemList: ArrayList<ProfileItem>,
-): BaseRecyclerAdapter<AdapterProfileBinding>(){
-    //AdapterProfileBinding是适配器的布局
-
-    //创建条目视图
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): BaseRecyclerHolder<AdapterProfileBinding> {
-        val binding= AdapterProfileBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return BaseRecyclerHolder(binding)
-    }
-
-    override fun getItemCount(): Int {
-        return profileItemList.size
-    }
-
-    //绑定数据到视图
-    override fun onBaseBindViewHolder(
-        position: Int,
-        binding: AdapterProfileBinding
+//修改数据类型为自定义的数据类ProfileItem
+class ProfileAdapter(val mContext: Context): BaseQuickAdapter<ProfileItem, BaseViewHolder>(R.layout.adapter_profile){
+    override fun convert(
+        holder: BaseViewHolder,
+        item:ProfileItem
     ) {
-        val data=profileItemList[position]
-        binding.apply {
-            profileAdTvTitle.text = data.title
-            profileAdIv.setImageResource(data.imgId)
+        //条目上控件的id
+        //profileAdTvTitled的类型是TextView，要用setText
+        holder.setText(R.id.profileAdTvTitle,item.title)
+        //profileAdIv的类型是 ImageView，要用setImageResource
+        holder.setImageResource(R.id.profileAdIv,item.imgId)
+//        holder.getView<LinearLayout>(R.id.profileAdLlItem).setOnClickListener {
+//            when(item.title){
+//                "Github"->ToastUtils.showShort("Github")
+//                else->{}
+//            }
+//        }
 
+        holder.getView<LinearLayout>(R.id.profileAdLlItem).setOnClickListener {
+            when(item.title){
+                mContext.getString(R.string.about_me)-> {
+                    UserActivity.actionStart(mContext)
+                }
+
+                else -> {
+                    ToastUtils.showShort("about me")
+                }
+            }
         }
     }
 }
+data class ProfileItem(
+    var title: String,
+    var imgId: Int,
 
-data class ProfileItem(var title: String,var imgId: Int)
+)

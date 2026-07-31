@@ -51,6 +51,8 @@
     <color name="profile_icon">#E9E9E9</color>
 
     <!-- 白色 -->
-    <color name="white">#ffffff</color>
+    <color name="white">#CACACA</color>
+
+    <color name="text_color_dark">#FFFFFF</color>
 
 </resources>

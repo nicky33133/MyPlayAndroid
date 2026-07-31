@@ -12,9 +12,15 @@
         android:id="@+id/profileTitleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:backImageVisible="false" />
+        app:backImageVisible="false"
+        app:titleName="@string/mine" />
+<!--  backImageVisible， titleName是两个自定义属性 -->
+<!--    这里给这两个自定义属性赋值了，backImageVisible的值是false，titleName的值是@string/mine,点进去这个字符串，具体的值是Mine-->
 
+
+<!--    android: 是系统定义好的“通用规矩”，app: 是这个自定义控件自己定的“独家规矩”-->
     <!--    app:titleName="@string/mine"-->
+
     <!--    登陆头像和文字-->
     <ScrollView
         android:layout_width="match_parent"
@@ -30,6 +36,7 @@
                 android:layout_height="@dimen/dp_170"
                 android:background="@color/colorPrimary">
 
+                <!--    登陆头像和文字-->
                 <com.example.core.view.custom.RoundImageView
                     android:id="@+id/profileIvHead"
                     android:layout_width="@dimen/dp_70"
@@ -73,23 +80,21 @@
                     android:id="@+id/profileRv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-
             </androidx.cardview.widget.CardView>
             <!--    android:layout_margin="@dimen/dp_15"（外部间距）-->
             <!--app:cardCornerRadius="@dimen/dp_5"（卡片圆角）-->
 
-
-            <!--    登陆按钮-->
-            <!--  <Button-->
-            <!--      android:id="@+id/profileBtnLogout"-->
-            <!--      android:layout_width="wrap_content"-->
-            <!--      android:layout_height="wrap_content"-->
-            <!--      android:layout_gravity="center"-->
-            <!--      android:background="@drawable/btn_exit_login_bg"-->
-            <!--      android:paddingHorizontal="@dimen/dp_50"-->
-            <!--      android:text="@string/log_out"-->
-            <!--      android:textColor="@color/white"-->
-            <!--      android:textSize="@dimen/sp_13" />-->
+<!--                登陆按钮-->
+              <Button
+                  android:id="@+id/profileBtnLogout"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:background="@drawable/btn_exit_login_bg"
+                  android:paddingHorizontal="@dimen/dp_50"
+                  android:text="@string/log_out"
+                  android:textColor="@color/white"
+                  android:textSize="@dimen/sp_13" />
 
             <!-- android:layout_gravity  告诉父布局，我这个子控件应该放在父容器的哪个位置-->
         </LinearLayout>

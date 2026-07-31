@@ -1,10 +1,13 @@
 package com.example.myplayandroid
 
 import android.app.Application
+import android.content.Context
+import android.util.Log
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.tencent.bugly.crashreport.CrashReport
+import com.tencent.mmkv.MMKV
 //import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -16,12 +19,19 @@ import kotlinx.coroutines.launch
 //生成一个继承自 Application 的基类，并负责创建全局的依赖注入容器（Component）。
 //如果不加这行，项目中所有使用 @Inject 和 @AndroidEntryPoint 的地方都会编译失败
 class App: Application() {
+    private  val TAG = "App"
+
     override fun onCreate() {
         super.onCreate()//保证父类的初始化逻辑（比如系统环境准备）被正确执行
         //调用Play单例中的方法
-        Play.initialize(applicationContext)//applicationContext（即全局上下文）
+        Log.d(TAG, "onCreate: aa")
+        MMKV.initialize(applicationContext)//applicationContext（即全局上下文）
+        Log.d(TAG, "onCreate: 初始化")
+         //MMKV.initialize(Context)
+        //在 Kotlin/Java 中，Context 是一个抽象类。要使用它，
+        // 你手里必须有一个具体的对象（比如 Activity、Application 或 Service 的实例），而不是写一个类名 Context
         initData()
-
+//        MMKV.initialize(this)
     }
     private fun initData(){
         CoroutineScope(Dispatchers.IO+ SupervisorJob()).launch {

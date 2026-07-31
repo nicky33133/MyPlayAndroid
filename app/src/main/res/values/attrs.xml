@@ -6,6 +6,7 @@
         <attr name="titleName" format="string"/>
 <!--        态控制标题栏左侧“返回箭头”的显示与隐藏-->
         <attr name="backImageVisible" format="boolean"/>
+
     </declare-styleable>
 
 <!-- FloatingMenu 悬浮菜单属性组   -->
@@ -26,15 +27,15 @@
     </declare-styleable>
 
 
-    <declare-styleable name="VectorDrawablePath">
-        <!-- The color to fill the path if not defined implies no fill. -->
-        <attr name="fillColor" format="color" />
-        <!-- The specification of the operations that define the path. -->
-        <attr name="pathData" format="string" />
-    </declare-styleable>
+<!--    <declare-styleable name="VectorDrawablePath">-->
+<!--        &lt;!&ndash; The color to fill the path if not defined implies no fill. &ndash;&gt;-->
+<!--        <attr name="fillColor" format="color" />-->
+<!--        &lt;!&ndash; The specification of the operations that define the path. &ndash;&gt;-->
+<!--        <attr name="pathData" format="string" />-->
+<!--    </declare-styleable>-->
 
+<!--    &lt;!&ndash; Defines the radius of the four corners. &ndash;&gt;-->
+<!--    <attr name="radius" format="dimension" />-->
+<!--    -->
 
-
-    <!-- Defines the radius of the four corners. -->
-    <attr name="radius" format="dimension" />
 </resources>
