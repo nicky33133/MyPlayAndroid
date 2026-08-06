@@ -1,5 +1,6 @@
 package com.example.model.room.entity
 
+import android.nfc.Tag
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -11,6 +12,7 @@ import androidx.room.PrimaryKey
 // 而这个 Article 类就是这张表的“蓝图”。
 @Entity(tableName = "browse_history")
 data class Article(
+    // @ColumnInfo(name = "can_edit") （注解——给数据库看的备注）
     @PrimaryKey(autoGenerate = true)val uid: Int,
     @ColumnInfo(name = "apk_link") val napkLink: String,
     @ColumnInfo(name = "audit") val audit: Int,
@@ -37,7 +39,7 @@ data class Article(
     @ColumnInfo(name = "share_user") val shareUser: String,
     @ColumnInfo(name = "super_chapter_id") val superChapterId: Int,
     @ColumnInfo(name = "super_chapter_name") val superChapterName: String,
-    //@ColumnInfo(name = "tags") val tags: List<Tag>,
+//    @ColumnInfo(name = "tags") val tags: List<Tag>,
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "type") val type: Int,
     @ColumnInfo(name = "user_id") val userId: Int,

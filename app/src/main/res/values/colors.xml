@@ -72,7 +72,8 @@
 
     <color name="login_pressed_solid">#060608</color>
     <color name="login_pressed_stroke">#14e0e0f0</color>
-    <color name="article_bg">#232222</color>
+<!--    <color name="article_bg">#232222</color>-->
+    <color name="article_bg">#FDFDFD</color>
     <color name="article_pressed">#151515</color>
 
     <color name="shortcut_icon">#BFBFBF</color>

@@ -5,24 +5,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+<!--    首页布局的自定义控件的布局-->
+<!-- SmartRefreshLayout 是 Android 平台上非常受欢迎的一款智能下拉刷新框架
+ 强大、稳定、成熟的下拉刷新框架-->
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/toTopSmartRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/toTopSmartRefreshLayout">
-
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/toTopRecycleView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/toTopRecycleView"/>
+            android:layout_height="match_parent"/>
 
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
+<!--    一个图标，回到滚动条目的最顶部-->
     <ImageView
+        android:id="@+id/toTopIvClick"
         android:layout_width="@dimen/dp_40"
         android:layout_height="@dimen/dp_40"
-        android:id="@+id/toTopIvClick"
         android:layout_gravity="end|bottom"
         android:layout_marginHorizontal="@dimen/dp_20"
         android:layout_marginVertical="@dimen/dp_85"

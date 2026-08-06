@@ -12,9 +12,11 @@ import com.example.myplayandroid.R
 import com.example.myplayandroid.databinding.ActivityMainBinding
 import com.example.myplayandroid.main.MainViewModel
 import com.example.myplayandroid.showToast
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
 import kotlin.system.exitProcess
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity(){
 
 

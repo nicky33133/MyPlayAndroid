@@ -9,8 +9,8 @@
     android:minHeight="@dimen/dp_70">
 
 <!--    <attr name="titleName" format="string"/>
-<!--        态控制标题栏左侧“返回箭头”的显示与隐藏-->
-<!--    <attr name="backImageVisible" format="boolean"/>&ndash;&gt;-->
+        态控制标题栏左侧“返回箭头”的显示与隐藏
+    <attr name="backImageVisible" format="boolean"/>-->
 
 
 <!--    返回箭头-->

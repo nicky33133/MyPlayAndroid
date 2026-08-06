@@ -7,12 +7,12 @@
     android:orientation="vertical"
     tools:context=".home.HomePageFragment">
 
-<!--    <com.example.myplayandroid.TitleBar-->
-<!--        android:id="@+id/homeTitleBar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:backImageVisible="false"-->
-<!--        app:titleName="Home" />-->
+    <com.example.myplayandroid.TitleBar
+        android:id="@+id/homeTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backImageVisible="false"
+        app:titleName="Home" />
 
 <!--    <com.youth.banner.Banner-->
 <!--        android:id="@+id/homeBanner"-->
@@ -29,14 +29,9 @@
 <!--        android:layout_marginVertical="@dimen/dp_3"-->
 <!--        android:visibility="gone" />-->
 
-<!--    <com.example.myplayandroid.base.ToTopRecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:id="@+id/homeToTopRecyclerView"/>-->
-
-    <Button
+    <com.example.myplayandroid.base.ToTopRecyclerView
         android:layout_width="match_parent"
-        android:layout_height="120dp"/>
-
+        android:layout_height="match_parent"
+        android:id="@+id/homeToTopRecyclerView"/>
 
 </LinearLayout>

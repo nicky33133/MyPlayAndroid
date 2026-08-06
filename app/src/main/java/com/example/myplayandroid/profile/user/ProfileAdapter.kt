@@ -27,17 +27,19 @@ class ProfileAdapter(val mContext: Context): BaseQuickAdapter<ProfileItem, BaseV
 //            }
 //        }
 
-        holder.getView<LinearLayout>(R.id.profileAdLlItem).setOnClickListener {
+        val l = holder.getView<LinearLayout>(R.id.profileAdLlItem)
+            l.setOnClickListener {
             when(item.title){
                 mContext.getString(R.string.about_me)-> {
                     UserActivity.actionStart(mContext)
                 }
-
                 else -> {
                     ToastUtils.showShort("about me")
                 }
             }
         }
+
+
     }
 }
 data class ProfileItem(

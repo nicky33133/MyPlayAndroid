@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import com.example.core.view.base.lce.BaseFragmentInit
@@ -15,7 +16,7 @@ import com.scwang.smart.refresh.layout.util.SmartUtil.dp2px
 
 //抽象方法
 //所有Fragment的基类
-abstract class BaseFragment : Fragment(), BaseFragmentInit {
+abstract class BaseFragment : Fragment(), BaseFragmentInit, ILce {
 
     private var defaultLce: ILce? = null
     private var loadErrorView: View? = null
@@ -95,17 +96,18 @@ abstract class BaseFragment : Fragment(), BaseFragmentInit {
                 //如果 Result 是成功状态，getOrNull() 返回实际的数据 T；
                 // 如果成功但数据本身就是 null，则返回 null
                 val dataList=it.getOrNull()
-
                 //判空
                 if (dataList!=null){
-//                    loadFinished()
+                    loadFinished()
                     onDataStatus(dataList)// 把数据传给调用者，让调用者更新 UI
                 }else{
-//                    showLoadErrorView()
+                    showLoadErrorView()//显示加载错误
                 }
             }else{
+                //执行到这
+                //如果失败（网络或服务器错误）→ 弹出 Toast 提示
                 context?.showToast(getString(R.string.bad_network_view_tip))
-//                showBadNetworkView { initData() }
+                showBadNetworkView { initData() }
                 onBadNetwork.invoke()
             }
         }
@@ -138,6 +140,28 @@ abstract class BaseFragment : Fragment(), BaseFragmentInit {
         return view//返回传入的 View
     }
 
+    //下面的方法都委托给defaultLce 执行，基类本身不关心具体实现，便于替换
+    @CallSuper
+    override fun startLoading() {
+        defaultLce?.startLoading()
+    }
+
+    @CallSuper
+    override fun loadFinished() {
+        defaultLce?.loadFinished()
+    }
+
+    override fun showLoadErrorView(tip: String) {
+        defaultLce?.showLoadErrorView(tip)
+    }
+
+    override fun showBadNetworkView(listener: View.OnClickListener) {
+        defaultLce?.showBadNetworkView(listener)
+    }
+
+    override fun showNoContentView(tip: String) {
+        defaultLce?.showNoContentView(tip)
+    }
 
 }
 

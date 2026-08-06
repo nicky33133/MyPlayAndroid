@@ -1,9 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-//    alias(libs.plugins.ksp)
+    alias(libs.plugins.ksp)
     //Hilt
 //    id("com.google.dagger.hilt.android")
+//    id ("kotlin-kapt")          // 必须
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -20,6 +22,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+//        //hilt的注解处理器
+//        defaultConfig {
+//            javaCompileOptions {
+//                annotationProcessorOptions {
+//                    arguments += mapOf("dagger.hilt.android.internal.rootComponentPackage" to "com.example.myplayandroid")
+//                }
+//            }
+//        }
 
         //Bugly
         ndk {
@@ -49,6 +60,11 @@ android {
     }
 //    repositories {
 //        maven (url = "https://s01.oss.sonatype.org/content/groups/public")
+//    }
+
+//    kapt {
+//        correctErrorTypes = true               // 可选，但能提高兼容性
+
 //    }
 }
 
@@ -85,9 +101,10 @@ dependencies {
     // 为 Fragment 提供 by viewModels() 扩展（如需在Fragment中使用）
     implementation("androidx.fragment:fragment-ktx:1.6.1")
     // Hilt 核心库
-//    implementation("com.google.dagger:hilt-android:2.57.1")
-    // Hilt 注解处理器（用 ksp）
-//    ksp("com.google.dagger:hilt-android-compiler:2.57.1")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    // Hilt 注解处理器（用 ksp），换kapt
+//    kapt("com.google.dagger:hilt-compiler:2.51.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.51.1")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
     //引入模块
@@ -107,5 +124,14 @@ dependencies {
     //BaseQuickAdapter 是开源库 BRVAH (BaseRecyclerViewAdapterHelper) 中的核心类
     implementation ("com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4")
 
+    // hilt
+    val hiltVersion = rootProject.extra["hiltVersion"] as String?
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    ksp("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    ksp("androidx.hilt:hilt-compiler:1.2.0")
 
+    // 协程核心库，提供 launch, async, delay 等基础功能[reference:4][reference:5]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+// 协程Android支持库，提供 Dispatchers.Main 等Android专属功能[reference:6][reference:7]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }

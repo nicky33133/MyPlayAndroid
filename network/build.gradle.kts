@@ -45,4 +45,17 @@ dependencies {
     //引入模块
     implementation(project(":model"))
     implementation(project(":core"))
+
+    //Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    // 数据转换器（这里以 Gson 为例）
+    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+    // （可选）OkHttp 日志拦截器，方便调试
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+
+    //日志拦截器
+//    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 }

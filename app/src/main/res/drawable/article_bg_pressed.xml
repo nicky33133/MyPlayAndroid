@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    stroke表示Shape的描边-->
+    <stroke
+        android:width="@dimen/dp_0_5"
+        android:color="@color/article_pressed" />
+<!--    solid 纯色填充-->
+    <solid android:color="@color/article_pressed" />
+    <corners android:radius="@dimen/dp_6" />
+</shape>

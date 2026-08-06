@@ -8,6 +8,7 @@ import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.mmkv.MMKV
+import dagger.hilt.android.HiltAndroidApp
 //import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,6 +19,8 @@ import kotlinx.coroutines.launch
 //@HiltAndroidApp：这是 Hilt 的入口触发器。它会触发 Hilt 的注解处理器，
 //生成一个继承自 Application 的基类，并负责创建全局的依赖注入容器（Component）。
 //如果不加这行，项目中所有使用 @Inject 和 @AndroidEntryPoint 的地方都会编译失败
+
+@HiltAndroidApp
 class App: Application() {
     private  val TAG = "App"
 

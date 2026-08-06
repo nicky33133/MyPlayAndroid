@@ -26,4 +26,7 @@
 
     <string name="no_login">Not Logged</string>
     <string name="click_login">Click to login</string>
+
+    <string name="newest">Newest</string>
+    <string name="topping">Topping</string>
 </resources>
