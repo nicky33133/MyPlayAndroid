@@ -7,7 +7,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object ServiceCreator {
+object ServiceCreator {//在这里封装了使用Retrofit
+    //用到的网络接口的绝对lujing
 
     private const val CONNECT_TIMEOUT = 30L
     private const val READ_TIMEOUT = 10L
@@ -19,12 +20,14 @@ object ServiceCreator {
         level= HttpLoggingInterceptor.Level.BODY
     }
 
+
+    //供外部调用的方法
     //第二个 create(service)：调用Retrofit对象的create(Class<T> service)方法，
     //该方法在运行时会动态生成该接口的代理对象，使得调用接口方法时自动转化为 HTTP 请求
-    fun <T>create(service:Class<T>):T=create().create(service)
+    fun <T>create(service:Class<T>):T=create1().create(service) //后面这个create()是系统的方法
 
     //私有的工厂方法，用于创建并配置一个 Retrofit 网络请求客户端实例
-    private fun create(): Retrofit {//返回值类型是 Retrofit 对象
+    private fun create1(): Retrofit {//返回值类型是 Retrofit 对象
         return RetrofitBuild(//RetrofitBuild一个构建器类，用于封装 Retrofit 的配置参数
             url = BASE_URL,//API 的基础地址
             client = okHttpClient,//一个预先配置好的 OkHttpClient 实例
@@ -53,6 +56,9 @@ object ServiceCreator {
     private val okHttpClient by lazy (LazyThreadSafetyMode.SYNCHRONIZED){
        //加拦截器
         OkHttpClient().newBuilder().apply {
+            //val   result  =  obj.apply  {  obj的上下文  }
+            // result == obj
+
             //连接超时时间
             connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
             //读取超时时间

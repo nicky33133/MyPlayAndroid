@@ -2,10 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:text="4"/>
+   <com.google.android.material.tabs.TabLayout
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/dp_75"
+       android:id="@+id/projectTabLayout"
+       android:background="@color/colorPrimary"
+
+       app:tabGravity="fill"
+       app:tabIndicatorColor="@color/white"
+       app:tabIndicatorFullWidth="false"
+       app:tabIndicatorHeight="@dimen/dp_5"
+
+       app:tabMaxWidth="0dp"
+       app:tabMode="scrollable"
+       app:tabSelectedTextColor="@color/white"
+       app:tabTextAppearance="@style/TabLayoutTextStyle"
+       app:tabTextColor="@color/white" />
+
+<!--    标签宽度填充	app:tabGravity="fill"-->
+
+<!---app:tabIndicatorColor="@color/white"
+app:tabIndicatorHeight="5dp"
+app:tabIndicatorFullWidth="false"	下划线为白色，高度 5dp（较粗醒目）；
+false 表示下划线宽度只包裹文字本身->
+
+<!-app:tabTextAppearance="@style/TabLayoutTextStyle"	文字样式引用了一个自定义样式（-->
+
+<!--&lt;!&ndash;-文字颜色（严重问题）	app:tabSelectedTextColor="@color/white"-->
+<!--app:tabTextColor="@color/white"	选中的文字和未选中的文字都是纯白色->-->
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/projectViewPager2"/>
+
 </LinearLayout>

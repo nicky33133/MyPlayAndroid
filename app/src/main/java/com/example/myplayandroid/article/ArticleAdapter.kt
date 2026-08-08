@@ -4,16 +4,13 @@ import android.content.Context
 import android.text.TextUtils
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.example.core.util.getHtmlText
 import com.example.model.room.entity.Article
 import com.example.myplayandroid.R
-import org.w3c.dom.Text
 import kotlin.apply
 
 
@@ -57,11 +54,8 @@ class ArticleAdapter(
             }else{
                 articleIvImg.visibility=GONE
             }
-
             itemHolder.setVisible(R.id.articleTvTop,itemData.type>0)
             itemHolder.setVisible(R.id.articleTvNew,itemData.fresh)
-
-
         }
     }
 

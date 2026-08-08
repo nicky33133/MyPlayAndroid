@@ -84,7 +84,7 @@ abstract class BaseHomeBottomTabWidget @JvmOverloads constructor (
     protected open fun fragmentManger(position: Int){
         //position 对应底部导航栏的 Tab 索引（0: 首页, 1: 项目, 2: 公众号, 3: 我的）
 
-//        mViewModel.setPage(position)
+        mViewModel.setPage(position)//保存当前选中的位置到 ViewModel
 
         //定义targetFg，用于获取目标 Fragment
         //mFragments[position]从 mFragments 列表中根据 position（整数索引）获取对应元素
@@ -94,11 +94,9 @@ abstract class BaseHomeBottomTabWidget @JvmOverloads constructor (
             currentFragment?.apply{
                 hide(this)//隐藏当前 Fragment
             }
-
             //对事务中的操作进行重新排序和合并
             //例如将多个 add/hide/show 优化为最少的操作次数，提升执行效率
             setReorderingAllowed(true)
-
 
             if (!targetFg.isAdded){//如果目标 Fragment没有被添加
                 //执行添加操作，添加到R.id.flHomeFragment容器

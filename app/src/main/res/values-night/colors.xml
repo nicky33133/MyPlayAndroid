@@ -55,4 +55,11 @@
 
     <color name="text_color_dark">#FFFFFF</color>
 
+    <color name="text_color">#F1F1F1</color>
+    <!--取消按钮-->
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <!-- 字体颜色 -->
+    <color name="text_color_black">#B5B5B5</color>
+
+    <color name="backgroundHomeFragment">#222222</color>
 </resources>

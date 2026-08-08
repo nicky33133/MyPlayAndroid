@@ -18,7 +18,11 @@ import kotlin.system.exitProcess
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity(){
+    private lateinit var binding: ActivityMainBinding
 
+    //MainViewModel自定义类，其中定义了获取页面的方法
+    private val viewModel by viewModels<MainViewModel>()
+    var isPort=true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,13 +31,11 @@ class MainActivity : BaseActivity(){
 //        binding= ActivityMainBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
     }
-    private lateinit var binding: ActivityMainBinding
 
-    //MainViewModel自定义类，其中定义了获取页面的方法
-    private val viewModel by viewModels<MainViewModel>()
-    var isPort=true
+
+
     override fun initData() {
-        TODO("Not yet implemented")
+
     }
 
     companion object{
@@ -49,6 +51,7 @@ class MainActivity : BaseActivity(){
         //Configuration.ORIENTATION_PORTRAIT 是竖屏常量（值为 1）
         isPort=resources.configuration.orientation== Configuration.ORIENTATION_PORTRAIT
         binding.homeView?.init(supportFragmentManager,viewModel)
+
     }
 
     //加载视图

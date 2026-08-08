@@ -70,6 +70,7 @@ class HomePageFragment : ArticleCollectBaseFragment() {
                 viewModel.articleList.clear()
             }
             viewModel.articleList.addAll(it)
+
             //Brvah适配器的通知方式
             //articleAdapter.notifyItemInserted(it.size)
 //            adapterA.setNewInstance(data)
@@ -88,6 +89,7 @@ class HomePageFragment : ArticleCollectBaseFragment() {
     private fun getArticleList(isRefresh: Boolean){
         viewModel.getArticleList(page,isRefresh)
     }
+
     companion object {
         private const val TAG = "HomePageFragment"
         @JvmStatic

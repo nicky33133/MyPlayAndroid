@@ -74,7 +74,7 @@
     <color name="login_pressed_stroke">#14e0e0f0</color>
 <!--    <color name="article_bg">#232222</color>-->
     <color name="article_bg">#FDFDFD</color>
-    <color name="article_pressed">#151515</color>
+    <color name="article_pressed">#F1F1F1</color>
 
     <color name="shortcut_icon">#BFBFBF</color>
 
@@ -85,4 +85,8 @@
     <color name="article_share_bg">#222222</color>
     <color name="article_share_item_bg">#2F2F2F</color>
     <color name="article_share_icon">#E9E9E9</color>
+
+
+    <color name="backgroundHomeFragment">#E9E9E9</color>
+
 </resources>

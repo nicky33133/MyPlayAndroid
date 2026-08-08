@@ -16,4 +16,9 @@
 
 <!--    <style name="AppTheme" parent="Theme.AppCompat.DayNight"/>-->
     <style name="Theme.MyPlayAndroid" parent="Base.Theme.MyPlayAndroid" />
+
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
 </resources>

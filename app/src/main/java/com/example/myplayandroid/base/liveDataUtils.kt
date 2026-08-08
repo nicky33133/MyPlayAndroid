@@ -39,7 +39,7 @@ fun <T> liveDataModel(block: suspend () -> BaseModel<T>) =
 //作用：当调用方已经拥有Result 类型的结果时，
 // 只需将其丢给 LiveData 发射，并自动捕获异常
 fun <T> liveDataFire(block:suspend () -> Result<T>)=
-    //返回值类型是 Result<T>（Kotlin 标准库中的 Result 类）
+//返回值类型是 Result<T>（Kotlin 标准库中的 Result 类）
     //suspend () -> Result<T>：这是一个挂起函数类型的入参
     liveData{
         // liveData { ... } 构建器（来自 lifecycle-livedata-ktx），

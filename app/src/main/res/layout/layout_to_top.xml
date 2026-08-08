@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/backgroundHomeFragment">
 
 <!--    首页布局的自定义控件的布局-->
 <!-- SmartRefreshLayout 是 Android 平台上非常受欢迎的一款智能下拉刷新框架
