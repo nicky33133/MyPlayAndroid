@@ -32,7 +32,8 @@ abstract class BaseHomeBottomTabWidget @JvmOverloads constructor (
     //每个 Fragment 实例只有在第一次被访问时才会创建（执行 newInstance()）
     private val mHomeFragment: HomePageFragment by lazy { HomePageFragment.newInstance() }
     private val mProjectFragment: ProjectFragment by lazy { ProjectFragment.newInstance() }
-    private val mObjectListFragment: OfficialAccountsFragment by lazy { OfficialAccountsFragment.newInstance() }
+    private val mObjectListFragment: OfficialAccountsFragment by lazy { OfficialAccountsFragment.newInstance(
+    ) }
     private val mProfileFragment: ProfileFragment by lazy { ProfileFragment.newInstance() }
 
     //将外部的 FragmentManager 和 MainViewModel 保存到成员变量，供后续操作使用

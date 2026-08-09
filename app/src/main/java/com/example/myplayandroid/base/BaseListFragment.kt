@@ -14,6 +14,7 @@ abstract class BaseListFragment: ArticleCollectBaseFragment() {
     //protected 就是"给继承用的锁"——只有类内部和它的子类能访问
     protected var binding: FragmentBaseListBinding? =null
     protected lateinit var articleAdapter: ArticleAdapter
+
     protected var page = 1
 
     override fun getLayoutView(

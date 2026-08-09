@@ -2,6 +2,7 @@ package com.example.network.service
 
 import com.example.model.model.ArticleList
 import com.example.model.model.BaseModel
+import com.example.model.room.entity.Article
 import com.example.model.room.entity.ProjectClassify
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -13,8 +14,7 @@ import retrofit2.http.Query
 interface ProjectService {
 
     @GET("project/tree/json")
-    suspend fun getProjectTree(): BaseModel<List<ProjectClassify>>
-
+    suspend fun getProjectTree(): BaseModel<List<ProjectClassify>>//ProjectClassify
 
     //相对路径
     @GET("project/list/{page}/json")

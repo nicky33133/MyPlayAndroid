@@ -1,7 +1,9 @@
 package com.example.network.base
 
 import com.example.network.service.HomePageService
+import com.example.network.service.OfficialService
 import com.example.network.service.ProjectService
+import kotlin.jvm.java
 
 object PlayAndroidNetWork {
 
@@ -27,10 +29,13 @@ object PlayAndroidNetWork {
     //自定义的单例类ServiceCreator
     //调用 ServiceCreator 对象的 create 方法
     //方法内部封装了 Retrofit 实例的构建 和 接口代理的生成
-    private val projectService= ServiceCreator.create(ProjectService::class.java)
-
+    private val projectService= ServiceCreator.create(ProjectService::class.java)// ProjectService是接口，写了相对路劲的
     suspend fun getProjectTree() = projectService.getProjectTree()
-
     //这个getProject是一个封装，实际是projectService.getProject(page,cid)中的方法
     suspend fun getProject(page:Int,cid: Int)=projectService.getProject(page,cid)
+
+
+    private val officialService= ServiceCreator.create(OfficialService::class.java)
+    suspend fun getWxArticle(page: Int,cid: Int)=officialService.getWxArticle(page,cid)
+    suspend fun getWxArticleTree()=officialService.getWxArticleTree()
 }

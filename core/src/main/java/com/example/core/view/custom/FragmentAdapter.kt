@@ -6,7 +6,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 
-//适配器基类
+//它继承自 FragmentStateAdapter，专门用于与 ViewPager2 配合，管理一组 Fragment 页面
 class FragmentAdapter(
     mFragmentManager: FragmentManager,lifecycle: Lifecycle
 ):FragmentStateAdapter(mFragmentManager,lifecycle) {
@@ -19,11 +19,11 @@ class FragmentAdapter(
             mFragment.clear()
             mFragment.addAll(this)
         }
-
     }
 
     fun title(position: Int): String{
         return mTitles[position]
+        //private lateinit var mTitles: Array<String>
     }
 
     override fun createFragment(position: Int): Fragment {

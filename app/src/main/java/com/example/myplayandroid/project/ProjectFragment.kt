@@ -37,9 +37,13 @@ class ProjectFragment: BaseTabFragment() {
     //初始化Tab和ViewPager
     override fun initView() {
         //自定义适配器FragmentAdapter
+        //projectViewPager2的适配器
         adapter= FragmentAdapter(requireActivity().supportFragmentManager,lifecycle)
         binding?.apply {
+            //给控件projectViewPager2设置适配器
            projectViewPager2.adapter=adapter
+
+
             projectTabLayout.addOnTabSelectedListener(this@ProjectFragment)
         //addOnTabSelectedListener 是 TabLayout 用来监听 Tab 选中状态变化的方法。
             //“Tab”（标签页）指的就是导航栏上那个可点击的“按钮/卡片”
@@ -49,13 +53,25 @@ class ProjectFragment: BaseTabFragment() {
             TabLayoutMediator(projectTabLayout,projectViewPager2){
                 tab,position ->
                 tab.text=adapter.title(position)
-            }.attach()
+                //右边的title
+                //   fun title(position: Int): String{
+                //        return mTitles[position]
+                //        //private lateinit var mTitles: Array<String>
+                //    }
+            }.attach()//整个联动就生效
+
+            //TabLayoutMediator 内部大致做了以下工作：
+            // 从 ViewPager2 的 Adapter 获取页面数量（getItemCount()），然后在 TabLayout 中创建相同数量的标签。
+            //为每个标签执行你提供的 lambda 回调，进行内容填充。
+            //注册 ViewPager2 的 registerOnPageChangeCallback，当页面滑动时更新 TabLayout 的选择状态。
+            //注册 TabLayout 的 addOnTabSelectedListener，当标签点击时调用 ViewPager2.setCurrentItem() 切换页面。
+            //自动处理配置变更（如屏幕旋转）后的状态恢复
+
             //设置 TabLayout 的内边距（padding）
             projectTabLayout.setPadding(0,context.getStatusBarHeight(),0,0)
         }
     }
 
-    //加载数据并动态生成Tab
     //动态生成顶部 Tab 的标题列表和对应的 Fragment 页面列表
     @SuppressLint("NotifyDataSetChanged")
     override fun initData(){
@@ -102,6 +118,7 @@ class ProjectFragment: BaseTabFragment() {
 
     companion object{
         @JvmStatic
+
         fun newInstance()= ProjectFragment()
     }
 }

@@ -10,25 +10,26 @@ abstract class BaseAndroidViewModel<BaseData,Data,Key>: ViewModel() {
 
     //BaseData,Data,Key>是三个自定义的泛型参数
     //继承的子类必须传入这三个参数
-
     val dataList= ArrayList<Data>()
+    //这个在ProjectListFragment中调用了
 
 
     //记录错误点：传入参数key时，没有使用抽象方法BaseAndroidViewModel的泛型参数
     //而是导入了一个系统的，导致错误
     private val pageLiveData= MutableLiveData<Key>()
 
-    // dataLiveData是数据源
+    // dataLiveData是数据源（viewModel观测的）
     val dataLiveData=pageLiveData.switchMap {
         page-> getData(page)
+    }
+    fun getDataList(page: Key){
+        //给pageLiveData设置值
+        pageLiveData.value=page!!
     }
 
     //dataLiveData与getData方法有关
     //接下来看getData的实现
     abstract fun getData(page: Key): LiveData<Result<BaseData>>
 
-    fun getDataList(page: Key){
-        //给pageLiveData设置值
-        pageLiveData.value=page!!
-    }
+
 }

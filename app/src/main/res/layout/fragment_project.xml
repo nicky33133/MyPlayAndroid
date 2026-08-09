@@ -5,6 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+<!--    TabLayout 是 Android Material Design 组件库中的一个核心控件，
+主要用于在水平方向上展示和管理一组标签页（Tabs）-->
+
+
    <com.google.android.material.tabs.TabLayout
        android:layout_width="match_parent"
        android:layout_height="@dimen/dp_75"

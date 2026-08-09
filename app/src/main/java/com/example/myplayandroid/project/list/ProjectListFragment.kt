@@ -11,12 +11,13 @@ import com.example.myplayandroid.base.BaseListFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.collections.addAll
 
-private const val PROJECT_CID = "PROJECT_CID"
+private const val PROJECT_CID = "PROJECT_CID"//?
 //第二个碎片文章列表的自定义类
 @AndroidEntryPoint
 class ProjectListFragment: BaseListFragment() {
     private val viewModel by viewModels<ProjectListViewModel>()
     private var projectCid:Int? =null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
