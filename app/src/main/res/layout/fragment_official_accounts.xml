@@ -2,7 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/officialTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_75"
+        android:background="@color/colorPrimary"
+
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/white"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="@dimen/dp_5"
+        app:tabMaxWidth="0dp"
+        app:tabMode="scrollable"
+
+
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabTextColor="@color/white"/>
+
+<!--android:background="@color/colorPrimary"：背景色使用主题主色（通常是蓝色或品牌色）-->
+<!--app:tabMode="scrollable"：标签可水平滚动-->
+<!--<!-fill 表示平均分配宽度填满 TabLayout，但 scrollable 模式下 tabGravity 属性会被系统忽略（只有 fixed 模式才生效-&ndash;&gt;-->
+<!--app:tabMaxWidth="0dp"：强制不限制标签最大宽度，结合滚动模式-->
+<!--    app:tabIndicatorColor="@color/white"：选中的下划线为白色-->
+<!--app:tabIndicatorFullWidth="false"：下划线不撑满整个 Tab 宽度，而是仅与文字宽度或图标宽度一致-->
+<!--    app:tabIndicatorHeight="@dimen/dp_5"：下划线高度为 5dp-->
+
+
+
 
 
 

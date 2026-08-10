@@ -10,6 +10,8 @@ import androidx.room.PrimaryKey
 // 它的核心作用是 “用一张数据库表存储全站所有类型的文章列表”
 //把首页文章、置顶文章、项目文章、公众号文章全都塞进了 同一张表（browse_history）里，
 // 而这个 Article 类就是这张表的“蓝图”。
+
+// Room 数据库的实体类（Entity,
 @Entity(tableName = "browse_history")
 data class Article(
     // @ColumnInfo(name = "can_edit") （注解——给数据库看的备注）

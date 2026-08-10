@@ -36,6 +36,15 @@ android {
     }
 }
 
+//根本原因是你的项目里同时引入了两个不同版本的 annotations 库：com.intellij:annotations:12.0 和 org.jetbrains:annotations:23.0.0。它们包含了相同的类，导致构建失败。
+// 在 android 块外面添加
+//样，所有依赖项都不会再传递 com.intellij:annotations 库，从而解决了冲突。
+configurations {
+    all {
+        exclude(group = "com.intellij", module = "annotations")
+    }
+}
+
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -46,7 +55,10 @@ dependencies {
     //引入模块
     implementation(project(":core"))
     //Room
-    implementation("androidx.room:room-runtime:2.6.0")
-    kapt ("androidx.room:room-compiler:2.6.0")
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    implementation(libs.room.compiler)
+
+//    kapt ("androidx.room:room-compiler:2.6.0")
 
 }

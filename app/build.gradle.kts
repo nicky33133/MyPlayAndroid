@@ -4,8 +4,10 @@ plugins {
     alias(libs.plugins.ksp)
     //Hilt
 //    id("com.google.dagger.hilt.android")
-//    id ("kotlin-kapt")          // 必须
+    id ("kotlin-kapt")          // 必须 ?
     id ("dagger.hilt.android.plugin")
+    //Room
+//    alias(libs.plugins.ksp)
 }
 
 android {
@@ -134,4 +136,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 // 协程Android支持库，提供 Dispatchers.Main 等Android专属功能[reference:6][reference:7]
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
 }

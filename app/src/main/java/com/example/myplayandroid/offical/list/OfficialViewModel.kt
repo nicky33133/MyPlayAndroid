@@ -20,7 +20,9 @@ class OfficialViewModel @Inject constructor(
     //在 Kotlin 中，Unit 是一个类型，同时它也是这个类型的唯一实例（单例）。
     // 它的核心含义是：“这个操作完成了，但没有任何有意义的数据要返回”。
 
-//    var position=0
+    var position=0
+
+
 //    override fun getData(page: Boolean): LiveData<Result<List<Article>>> {
 //        return officialRepository.getWxArticle(page)
 //    }
