@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="bad_network_view_tip">Your network is not to force, can tap the screen to reload</string>
+</resources>

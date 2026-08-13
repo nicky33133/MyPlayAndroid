@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".home.search.SearchActivity"
+    android:fitsSystemWindows="true"
+    android:id="@+id/activity_search">
+<!--    android:fitsSystemWindows="true" 的作用是：
+让当前 View 根据自己的内边距（Padding）自动调整内容区域，
+从而避免内容被系统状态栏、导航栏或输入法键盘等“系统窗口”所遮挡-->
+
+
+<!--    tools:context=".home.search.SearchActivity" 是一个仅在 Android Studio 设计时（Design Time）生效的辅助属性，
+它告诉布局编辑器：“当前这个 XML 布局文件，是绑定给 SearchActivity 这个页面使用的。”-->
+
+<!--    tools: 开头的属性（如 tools:context）只存在于 IDE 中，在
+编译生成最终 APK 时会被彻底剥离，不会增加安装包体积，也不会影响 App 在手机上的任何运行逻辑-->
+
+<!--删掉它，App 跑起来完全不受影响；但保留它，能极大提升开发体验-->
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_75"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/searchImgBack"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Back"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_8"
+            android:src="@drawable/img_back"
+            tools:ignore="HardcodedText"/>
+
+<!--tools:ignore="HardcodedText" 的作用是：强制告诉 Android Studio：
+“我知道这个控件的文字是直接写死的（硬编码），不用给我报黄色警告了，我接受这种做法。”-->
+
+<!--        android:contentDescription="Back"-->
+<!--        硬编码是对这个来说，因为没有引用资源，直接定义了文字，
+后续如果多个地方都要修改，就要一个个找到，在修改，相当于写死了-->
+
+        <!--android:layout_marginHorizontal	水平方向的外边距属性。
+        它会同时作用于视图的左侧（Left）和右侧（Right）。
+        相当于一次性写了 layout_marginLeft="50dp" + layout_marginRight="50dp"。
+        该属性从 Android 4.2（API 17） 开始引入-->
+
+        <!--android:contentDescription="Back" 的作用是：
+        给当前控件（通常是一个只有图标、没有文字的 ImageView 或 ImageButton）提供一个“看不见的文本标签”，
+        当视障用户开启屏幕朗读软件（如 TalkBack）时，手机会朗读出这个内容，告诉他们“这是一个返回按钮”。-->
+
+
+
+<!--        输入框-->
+        <EditText
+            android:id="@+id/searchTxtKeyword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dp_50"
+            android:background="@drawable/edit_gray_radus"
+
+            android:hint="@string/please_enter_keywords"
+            android:imeOptions="actionSearch"
+            android:importantForAutofill="no"
+
+
+            android:maxLines="1"
+
+
+            android:paddingStart="@dimen/dp_5"
+            android:paddingEnd="@dimen/dp_0"
+            android:singleLine="true"
+
+
+            android:textColor="@color/white"
+            android:textColorHint="@color/plain"
+            android:textSize="@dimen/sp_15"
+
+            tools:ignore="TextFields"/>
+
+<!-- android:hint @string/please_enter_keywords	输入框为空时显示的提示文字-->
+
+<!--        android:imeOptions	actionSearch	软键盘右下角的按键显示为 “搜索”（放大镜图标），
+点击后触发 EditorInfo.IME_ACTION_SEARCH 事件-->
+
+<!--        android:importantForAutofill	no	禁用自动填充-->
+
+
+<!--        android:maxLines	1	最大行数为 1-->
+
+
+<!--        android:paddingStart	@dimen/dp_5	左内边距（起始方向）-->
+<!--        android:paddingStart	@dimen/dp_5	左内边距（结束方向）-->
+
+<!--        android:singleLine	true	强制单行（已废弃，但仍在用）。它与 maxLines=1 功能重复-->
+
+<!--        android:textColorHint	@color/plain	提示文字（hint）的颜色-->
+
+<!--        tools:ignore	"TextFields"	压制 Lint 关于 inputType 缺失的警告（因为该输入框未指定键盘类型）-->
+
+
+        <ImageView
+            android:id="@+id/searchTxtRight"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center_vertical|end"
+            android:contentDescription="Search"
+            android:gravity="center"
+            android:padding="@dimen/dp_8"
+            android:src="@drawable/home_search_button"
+            tools:ignore="HardcodedText"/>
+
+<!--!-android:layout_gravity-布局重力（在父容器中的对齐方式）;-->
+<!--        - center_vertical：垂直方向居中。
+- end：水平方向对齐到父容器的末尾-->
+
+<!--android:contentDescription-无障碍描述：为视障用户（TalkBack）朗读提供文本->
+
+<!-;!&ndash;android:gravity;内容重力（控件内部图片的对齐方式）>-->
+
+<!-- tools:ignore "HardcodedText"压制 Lint 硬编码警告。
+这里针对的是 android:contentDescription="Search"-->
+
+
+    </FrameLayout>
+
+</LinearLayout>

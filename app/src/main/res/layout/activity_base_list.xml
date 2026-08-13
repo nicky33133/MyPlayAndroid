@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    tools:context=".base.BaseListActivity">
+
+<!--    ！！！！！记录！！！-->
+<!--    记录根 LinearLayout 缺少 android:orientation="vertical" ，
+默认水平方向导致 TitleBar 占满宽度，ToTopRecyclerView 被挤压到宽度为 0-->
+
+
+<!--    android:fitsSystemWindows="true"-->
+
+<!--      android:fitsSystemWindows="true"
+“嘿，系统栏（状态栏/导航栏）占了多少空间，请把我的内边距（Padding）撑开多少，别让我的孩子被它们挡住-->
+
+    <com.example.myplayandroid.TitleBar
+        android:id="@+id/baseListTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+  <com.example.myplayandroid.base.ToTopRecyclerView
+        android:id="@+id/baseListToTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

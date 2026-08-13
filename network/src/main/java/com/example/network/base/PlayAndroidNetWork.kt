@@ -16,6 +16,8 @@ object PlayAndroidNetWork {
     //封装
     suspend fun getTopArticleList() = homePageService.getTopArticle()
     suspend fun getArticleList(page: Int) = homePageService.getArticle(page)
+
+    //首页搜索的
     suspend fun getHotKey() = homePageService.getHotKey()
     suspend fun getQueryArticleList(page: Int, k: String) =
         homePageService.getQueryArticleList(page, k)
@@ -38,4 +40,9 @@ object PlayAndroidNetWork {
     private val officialService= ServiceCreator.create(OfficialService::class.java)
     suspend fun getWxArticle(page: Int,cid: Int)=officialService.getWxArticle(page,cid)
     suspend fun getWxArticleTree()=officialService.getWxArticleTree()
+
+
+
+
+
 }

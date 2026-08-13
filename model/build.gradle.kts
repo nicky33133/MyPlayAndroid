@@ -57,8 +57,15 @@ dependencies {
     //Room
     implementation(libs.room.ktx)
     implementation(libs.room.runtime)
-    implementation(libs.room.compiler)
+    kapt(libs.room.compiler) //标注记录
 
-//    kapt ("androidx.room:room-compiler:2.6.0")
+//    debugImplementation()
+
+//    implementation(libs.room.compiler) //引入方式错误
+//    kapt ("androidx.room:room-compiler:2.6.1")//没有统一版本管理
+
+    //记录区别：
+    //  kapt()，  debugImplementation(),implementation(),
+
 
 }

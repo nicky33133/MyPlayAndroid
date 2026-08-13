@@ -14,9 +14,11 @@ import androidx.room.PrimaryKey
 // Room 数据库的实体类（Entity,
 @Entity(tableName = "browse_history")
 data class Article(
-    // @ColumnInfo(name = "can_edit") （注解——给数据库看的备注）
+    // @ColumnInfo(name = "can_edit")    给 Room 的注解处理器（编译时工具）看的指令
+    //主键PrimaryKey
     @PrimaryKey(autoGenerate = true)val uid: Int,
-    @ColumnInfo(name = "apk_link") val napkLink: String,
+    //列信息ColumnInfo
+    @ColumnInfo(name = "apk_link") val apkLink: String,
     @ColumnInfo(name = "audit") val audit: Int,
     @ColumnInfo(name = "author") val author: String,
     @ColumnInfo(name = "can_edit") val canEdit: Boolean,
@@ -29,7 +31,9 @@ data class Article(
     @ColumnInfo(name = "envelope_pic") val envelopePic: String,
     @ColumnInfo(name = "fresh") val fresh: Boolean,
     @ColumnInfo(name = "id") val id: Int,
+
     @ColumnInfo(name = "link") val link: String,
+
     @ColumnInfo(name = "nice_date") val niceDate: String,
     @ColumnInfo(name = "nice_share_date") val niceShareDate: String,
     @ColumnInfo(name = "origin") val origin: String,

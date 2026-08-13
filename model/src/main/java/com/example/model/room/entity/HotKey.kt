@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+
+
+//Room数据可第一步，定义数据实体（Entity）
 @Entity(tableName = "hot_key")
 data class HotKey(
     @PrimaryKey(autoGenerate = true)val uid: Int=0,

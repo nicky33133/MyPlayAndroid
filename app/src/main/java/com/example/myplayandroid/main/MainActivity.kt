@@ -17,7 +17,7 @@ import kotlin.getValue
 import kotlin.system.exitProcess
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity(){
+class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
 
     //MainViewModel自定义类，其中定义了获取页面的方法

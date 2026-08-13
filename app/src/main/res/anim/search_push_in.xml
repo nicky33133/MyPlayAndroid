@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--    <translate>（平移动画）-->
+    <translate
+        android:duration="100"
+        android:fromYDelta="5%p"
+        android:toYDelta="0"/>
+<!--    视图从下方 5% 父容器高度处向上滑动回到原位-->
+<!--%p 中的 p 表示相对于父容器（Parent）的尺寸，而非自身-->
+<!--    android:duration	100	动画持续 100 毫秒-->
+<!--android:toYDelta	0	结束 Y 轴偏移：视图回到其原本在布局中的位置（无偏移）-->
+
+
+
+    <!--    <alpha>（透明度动画）-->
+    <alpha
+        android:duration="100"
+        android:fromAlpha="0.5"
+        android:toAlpha="1"/>
+<!--    android:toAlpha	1	结束透明度为 1.0（完全不透明）-->
+<!--    起始透明度为 0.5（50% 不透明，半透明状态）-->
+<!--视图从半透明渐变至完全清晰，与上滑动作同时进行-->
+</set>

@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.model.room.dao.BrowseHistoryDao
+import com.example.model.room.dao.HotKeyDao
 import com.example.model.room.dao.ProjectClassifyDao
 //import com.example.model.room.entity.Almanac
 import com.example.model.room.entity.Article
@@ -22,11 +23,12 @@ import com.example.model.room.entity.ProjectClassify
 //)
 
 
+//Room 使用第三步， 构建数据库（Database）
+//定义好3个部分的内容：数据库的版本号、包含哪些实体类，以及提供Dao层的访问实例
 @Database(
-    entities = [ProjectClassify::class, Article::class],
-    version = 2
-)
-
+    entities = [ProjectClassify::class, Article::class, HotKey::class],
+    version = 2 //从2改成了1
+)//记录点：  新增加了HotKey数据库，但是这里没有加上HotKey::class
 
 abstract class PlayDatabase: RoomDatabase(){
 
@@ -34,11 +36,13 @@ abstract class PlayDatabase: RoomDatabase(){
 
     abstract fun browseHistoryDao(): BrowseHistoryDao
 
+    //首页搜索功能的
+    abstract fun hotKeyDao(): HotKeyDao
+
     companion object{
         @Volatile
         //PlayDatabase抽象类的实例
         private var INSTANCE: PlayDatabase?=null
-
 
         //该方法返回instance
         fun getDatabase(context: Context): PlayDatabase{

@@ -87,7 +87,7 @@ class WelcomeActivity : BaseActivity(), View.OnClickListener{
     }
 
     override fun initData() {
-        TODO("Not yet implemented")
+
     }
 
     override fun initView() {

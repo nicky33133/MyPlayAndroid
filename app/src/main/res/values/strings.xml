@@ -29,4 +29,12 @@
 
     <string name="newest">Newest</string>
     <string name="topping">Topping</string>
+
+
+    <string name="please_enter_keywords">Please enter keywords</string>
+    <string name="keyword_not_null">Search keyword can not be empty</string>
+    <string name="keyword_null">No data on %s, replace keyword search</string>
+
+
+    <string name="no_network">The current network is unavailable</string>
 </resources>

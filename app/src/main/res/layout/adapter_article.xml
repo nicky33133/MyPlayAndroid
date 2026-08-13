@@ -9,6 +9,10 @@
     android:background="@drawable/article_list_bg"
     android:padding="@dimen/dp_10">
 
+
+<!--      android:id="@+id/articleLlItem" 区别每一个Item  -->
+
+
     <TextView
         android:id="@+id/articleTvAuthor"
         android:layout_width="wrap_content"

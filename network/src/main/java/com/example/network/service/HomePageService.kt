@@ -25,6 +25,20 @@ interface HomePageService {
     //ArticleList数据类
     //比如：调用 getArticle(5) 时，Retrofit 会将路径中的 {a} 占位符替换为参数 a 的实际值（本例中为 5）
     suspend fun getArticle(@Path("a")a: Int): BaseModel<ArticleList>
+    //BaseModel<ArticleList>
+    //{
+    //  "errorCode": 0,        // 0 代表成功
+    //  "errorMsg": "",        // 错误信息
+    //  "data": {              // 具体的文章列表数据
+    //    "curPage": 1,
+    //    "datas": [...]
+    //  }
+    //}
+
+
+
+
+
 
     //Query疑问//带参数
     @POST("article/query/{page}/json")

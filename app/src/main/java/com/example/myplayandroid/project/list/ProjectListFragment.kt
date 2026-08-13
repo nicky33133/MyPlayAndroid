@@ -2,11 +2,14 @@ package com.example.myplayandroid.project.list
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.model.pojo.QueryArticle
 import com.example.model.room.entity.Article
+import com.example.myplayandroid.article.ArticleActivity.Companion.actionStart
 import com.example.myplayandroid.article.ArticleAdapter
 import com.example.myplayandroid.base.BaseListFragment
+import com.example.myplayandroid.home.article.ArticleListActivity
 //import com.example.myplayandroid.home.HomePageFragment.Companion.TAG
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.collections.addAll
@@ -18,13 +21,13 @@ class ProjectListFragment: BaseListFragment() {
     private val viewModel by viewModels<ProjectListViewModel>()
     private var projectCid:Int? =null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             //给 projectCid 赋值
             projectCid = it.getInt(PROJECT_CID)
         }
+
     }
 
     override fun refreshData() {
@@ -41,6 +44,7 @@ class ProjectListFragment: BaseListFragment() {
         //父类实例的初始化在子类完成
         articleAdapter= ArticleAdapter(requireContext(),viewModel.dataList)
         super.initView()
+
     }
 
     private fun getArticleList(isRefresh: Boolean){
@@ -90,6 +94,7 @@ class ProjectListFragment: BaseListFragment() {
 //        }
 //        getArticleList(false) // 首次加载第一页
     }
+
 
 
 
