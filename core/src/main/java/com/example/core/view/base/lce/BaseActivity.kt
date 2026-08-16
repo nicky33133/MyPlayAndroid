@@ -9,7 +9,7 @@ import androidx.lifecycle.LiveData
 import com.example.core.R
 import com.example.core.util.showToast
 
-@SuppressLint("Registered")
+//@SuppressLint("Registered")
 abstract class BaseActivity: AppCompatActivity(), BaseActivityInit, ILce{
     override fun onCreate(
         savedInstanceState: Bundle?,

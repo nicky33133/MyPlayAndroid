@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">玩安卓</string>
+    <string name="app_name">Play Android</string>
     <string name="bad_network_view_tip">Your network is not to force, can tap the screen to reload</string>
     <string name="failed_load_data">Failed to load data</string>
-    <string name="exit_program">在按一次退出程序</string>
+    <string name="exit_program">Press one time to exit the program</string>
 
 
     <string name="home_page">Home</string>
@@ -37,4 +37,17 @@
 
 
     <string name="no_network">The current network is unavailable</string>
+    <string name="ranking_list">Leaderboard</string>
+
+    <string name="ranking">The first %s name</string>
+    <string name="coin">%d points</string>
+    <string name="lever">%d level</string>
+
+
+
+    <string name="author_share">The authors share</string>
+
+    <string name="man_info">Level %d ranking %s points %d</string>
+
+    <string name="no_data">No data</string>
 </resources>

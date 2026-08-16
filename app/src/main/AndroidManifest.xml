@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPlayAndroid">
         <activity
+            android:name=".profile.share.ShareActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.rank.list.RankActivity"
+            android:exported="false" />
+        <activity
             android:name=".article.ArticleActivity"
             android:exported="false" />
         <activity

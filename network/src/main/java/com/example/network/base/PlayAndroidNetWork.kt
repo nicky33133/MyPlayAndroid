@@ -3,6 +3,8 @@ package com.example.network.base
 import com.example.network.service.HomePageService
 import com.example.network.service.OfficialService
 import com.example.network.service.ProjectService
+import com.example.network.service.RankService
+import com.example.network.service.ShareService
 import kotlin.jvm.java
 
 object PlayAndroidNetWork {
@@ -40,6 +42,22 @@ object PlayAndroidNetWork {
     private val officialService= ServiceCreator.create(OfficialService::class.java)
     suspend fun getWxArticle(page: Int,cid: Int)=officialService.getWxArticle(page,cid)
     suspend fun getWxArticleTree()=officialService.getWxArticleTree()
+
+
+
+
+    private val rankService= ServiceCreator.create(RankService::class.java)
+    //排行列表
+    suspend fun getRankList(page: Int)=rankService.getRankList(page)//getRankList是接口
+    suspend fun getUserRank(page: Int)= rankService.getUserRank(page)
+    suspend fun getUserInfo()=rankService.getUserInfo()
+
+
+
+    //分享界面
+    private val shareService= ServiceCreator.create(ShareService::class.java)
+    suspend fun getMyShareList(page: Int)=shareService.getMyShareList(page)
+    suspend fun getShareList(cid: Int,page: Int)=shareService.getShareList(cid,page)
 
 
 

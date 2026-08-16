@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -16,6 +17,7 @@ import com.example.model.room.PlayDatabase
 import com.example.model.room.entity.Article
 import com.example.model.room.entity.HISTORY
 import com.example.myplayandroid.R
+import com.example.myplayandroid.profile.share.ShareActivity
 import com.example.myplayandroid.showToast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
@@ -104,6 +106,18 @@ class ArticleAdapter(
 //                    }
 //                }
             }
+
+//            itemHolder.getView<LinearLayout>(R.id.shareActivity).setOnClickListener {
+//                //检查网络
+//                if (!mContext.checkNetworkAvailable()){
+//                    mContext.showToast(mContext.getString(R.string.no_network))
+//                    return@setOnClickListener //返回点击事件
+//                }
+//                ShareActivity.actionStart(context,false,)
+//            }
+
+
+
         }
 
 

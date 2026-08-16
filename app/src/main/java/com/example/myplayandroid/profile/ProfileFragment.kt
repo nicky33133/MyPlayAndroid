@@ -8,6 +8,7 @@ import com.example.myplayandroid.ArticleCollectBaseFragment
 import com.example.myplayandroid.Play
 import com.example.myplayandroid.R
 import com.example.myplayandroid.databinding.FragmentProfileBinding
+import com.example.myplayandroid.profile.rank.list.RankActivity
 import com.example.myplayandroid.profile.user.ProfileAdapter
 import com.example.myplayandroid.profile.user.ProfileItem
 
@@ -61,6 +62,12 @@ class ProfileFragment : ArticleCollectBaseFragment(), View.OnClickListener {
         //设置右侧标题栏图片
         binding?.profileTitleBar?.setRightImage(R.drawable.btn_right_right_bg)
         binding?.profileRv?.layoutManager = LinearLayoutManager(requireContext())
+        //右侧图片点击事件
+        //自定义控件TitleBar中的方法
+        binding?.profileTitleBar?.setRightImgOnClickListener {
+            RankActivity.actionStart(requireContext())
+        }
+
 
         // ProfileAdapter主构造方法只有一个参数：mContext: Context。
         //在 Activity 中，直接传入 this；在 Fragment 中，传入 requireContext()
