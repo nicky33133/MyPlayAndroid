@@ -1,6 +1,11 @@
 package com.example.core.util
 
+import android.app.Activity
 import android.content.Context
+import android.view.View
+import android.view.Window
+import android.view.WindowInsets.Type.ime
+import androidx.core.view.WindowCompat
 
 
 //第二个碎片的顶部标题栏
@@ -26,4 +31,22 @@ fun Context?.getStatusBarHeight(): Int{
     }
 
     return result
+}
+
+//隐藏软键盘
+fun Activity?.hideIme(currentFocusView: View?=null){
+  //this指的是Activity
+    if (this == null || window == null) return
+
+    //如果调用者传入了特定的 View（比如当前获得焦点的输入框），就使用它；
+    // 否则使用 window.decorView（Activity 的根视图）
+    //焦点：就是整个最关注的UI点，比如输入框的那个点
+    val view = currentFocusView ?: window.decorView
+    view.clearFocus()// 清除焦点
+
+    //WindowCompat.getInsetsController(window, view)，用于获取控制窗口嵌入（如状态栏、导航栏、输入法）的控制器
+    val controller = WindowCompat.getInsetsController(window,view)
+    controller.hide(ime())//强制隐藏输入法
+    //ime()是系统的
+
 }

@@ -39,8 +39,13 @@ class ArticleActivity : BaseActivity(), View.OnClickListener {
 //    }
 
     override fun getLayoutView(): View {
+
        binding= ActivityArticleBinding.inflate(layoutInflater)
         return binding.root
+
+        // ✅ 关键：为 ImageView 设置点击监听器
+        binding.articleImgBack.setOnClickListener(this)
+        Log.d(TAG, "onClick: zhi")
     }
 
 
@@ -59,11 +64,23 @@ class ArticleActivity : BaseActivity(), View.OnClickListener {
         binding.articleWebView.loadUrl(pageUrl)
     }
 
-    override fun onClick(v: View?) {
 
+    private val TAG = "ArticleActivity"
+    override fun onClick(v: View?) {
+        Log.d(TAG, "onClick: zhixing")
+        if (v?.id == R.id.articleImgBack){
+            if (binding.articleWebView.canGoBack()){
+                binding.articleWebView.goBack()
+                return
+            }else{
+                finish()
+            }
+        }
+
+        Log.d(TAG, "onClick: 执行")
     }
 
-    companion object{
+    companion object{ //三种ActinStart,可以提供不同的打开方式
         fun actionStart(
             context: Context,
             article: Article
@@ -71,15 +88,24 @@ class ArticleActivity : BaseActivity(), View.OnClickListener {
             //点击item，打开内容页，就存入点击的标题和内容链接
             val intent = Intent(context, ArticleActivity::class.java).apply {
                 putExtra(PAGE_NAME, article.title)
-
-                putExtra(PAGE_URL, article.link)
+                putExtra(PAGE_URL, article.link)//文章的链接
                 //打印网址
                 Log.d("pppppp",  "actionStart: ${article.link}")
+                putExtra(PAGE_ID, article.id)
+                //1 true 0 false
+                putExtra(IS_COLLECTION, if (article.collect) 1 else 0)
+                putExtra(USER_ID, article.userId)
+            }
+            context.startActivity(intent)
+        }
 
-//                putExtra(PAGE_ID, article.id)
-//
-//                putExtra(IS_COLLECTION, if (article.collect) 1 else 0)
-//                putExtra(USER_ID, article.userId)
+        fun actionStart(
+            context: Context,
+            pageName: String,
+            pageUrl: String){
+            val intent = Intent(context, ArticleActivity::class.java).apply {
+                putExtra(PAGE_NAME,pageName)
+                putExtra(PAGE_URL,pageUrl)
             }
             context.startActivity(intent)
         }

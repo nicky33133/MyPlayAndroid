@@ -12,7 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:backImageVisible="false"
-        app:titleName="Home" />
+        app:titleName="@string/Home" />
+
+<!--    自定义控件设置标题名称-->
+
+
+
 
 <!--    <com.youth.banner.Banner-->
 <!--        android:id="@+id/homeBanner"-->

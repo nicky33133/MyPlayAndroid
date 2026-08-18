@@ -1,5 +1,6 @@
 package com.example.myplayandroid
 
+import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
+import com.example.core.util.hideIme
 import com.example.myplayandroid.databinding.LayoutTitleBinding
 
 
@@ -15,7 +17,7 @@ class TitleBar @JvmOverloads constructor(
     private val mContext: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : RelativeLayout(mContext, attrs, defStyleAttr) {
+) : RelativeLayout(mContext, attrs, defStyleAttr),View.OnClickListener {
     //, View.OnClickListener
     private lateinit var mTitleTv: TextView//标题文本
     private lateinit var mImgBack: ImageView//返回图标
@@ -80,5 +82,16 @@ class TitleBar @JvmOverloads constructor(
     //设置标题栏题目
     fun setTitle(title: String?){
         mTitleTv.text = title
+    }
+
+    //返回图标的点击事件
+    override fun onClick(v: View?) {
+        if (v?.id == R.id.imgBack){
+            //将 Context 对象强制转换为 Activity 类型，转换后可以调用 Activity 特有的方法，
+            // 但它本质上还是同一个对象，只是告诉编译器“把这个 Context 当作 Activity 来使用
+            (mContext as Activity).hideIme()
+            mContext.finish()
+            //hideIme()在工具类给Activity写的一个拓展方法
+        }
     }
 }

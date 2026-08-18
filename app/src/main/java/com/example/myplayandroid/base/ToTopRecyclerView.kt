@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.model.room.entity.Article
 import com.example.myplayandroid.StaggeredDividerItemDecoration
 import com.example.myplayandroid.article.ArticleAdapter
 import com.example.myplayandroid.databinding.LayoutToTopBinding
@@ -22,6 +23,8 @@ class ToTopRecyclerView @JvmOverloads constructor(
     defStyleAttr: Int=0
 ): FrameLayout(mContext,attrs,defStyleAttr), View.OnClickListener {
 
+
+    lateinit var adapter: Article
     private lateinit var mToTopSmartRefreshLayout: SmartRefreshLayout
     private lateinit var mToTopRecyclerView: RecyclerView//条目recyclerView
     private lateinit var mToTopIvClick: ImageView//回到顶部图标

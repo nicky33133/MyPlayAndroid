@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPlayAndroid">
         <activity
+            android:name=".main.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".profile.share.ShareActivity"
             android:exported="false" />
         <activity

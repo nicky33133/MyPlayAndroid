@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">玩安卓</string>
+
     <string name="bad_network_view_tip">你的网络无法强制操作，可以点击屏幕来重新加载</string>
     <string name="failed_load_data">下载数据失败</string>
     <string name="exit_program">在按一次退出程序</string>
@@ -17,7 +17,7 @@
 
     <string name="mine_points">我的分数</string>
     <string name="mine_blog">我的博客</string>
-    <string name="mine_nuggets">Nuggets</string>
+    <string name="mine_nuggets">掘金</string>
     <string name="mine_github">我的Github</string>
     <string name="github">Github</string>
     <string name="browsing_history">浏览历史</string>
@@ -30,6 +30,7 @@
 
     <string name="newest">最新</string>
     <string name="topping">顶部</string>
+
 
 
     <string name="please_enter_keywords">请输入关键词</string>
@@ -49,4 +50,13 @@
     <string name="author_share">作者分享</string>
     <string name="man_info">等级  %d    排名  %s    积分  %d</string>
     <string name="no_data">没有数据</string>
+
+    <string name="app_name">玩安卓</string>
+    <string name="enter_name">请输入用户名</string>
+    <string name="register_account">注册账号</string>
+    <string name="login">登陆</string>
+    <string name="no_browsing_history">当前无历史浏览记录</string>
+    <string name="no_more_data">没有更多数据</string>
+    <string name="enter_password">请输入密码</string>
+    <string name="Home">首页</string>
 </resources>

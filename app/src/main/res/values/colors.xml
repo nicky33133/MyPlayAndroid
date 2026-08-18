@@ -67,11 +67,11 @@
 
     <color name="floatBackground">#353535</color>
 
-    <color name="login_normal_solid">#ff1E1E21</color>
-    <color name="login_normal_stroke">#14e0e0f0</color>
+    <color name="login_normal_solid">#ffffffff</color>
+    <color name="login_normal_stroke">#ffe0e0e0</color>
 
-    <color name="login_pressed_solid">#060608</color>
-    <color name="login_pressed_stroke">#14e0e0f0</color>
+    <color name="login_pressed_solid">#ededed</color>
+    <color name="login_pressed_stroke">#ededed</color>
 <!--    <color name="article_bg">#232222</color>-->
     <color name="article_bg">#FDFDFD</color>
     <color name="article_pressed">#F1F1F1</color>

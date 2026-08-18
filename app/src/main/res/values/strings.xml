@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Play Android</string>
+
     <string name="bad_network_view_tip">Your network is not to force, can tap the screen to reload</string>
     <string name="failed_load_data">Failed to load data</string>
     <string name="exit_program">Press one time to exit the program</string>
@@ -20,6 +20,7 @@
     <string name="mine_github">My Github</string>
     <string name="github">Github</string>
     <string name="browsing_history">Browsing History</string>
+
     <string name="about_me">About me</string>
     <string name="my_share">My Share</string>
     <string name="my_collection">My collection</string>
@@ -44,10 +45,20 @@
     <string name="lever">%d level</string>
 
 
-
     <string name="author_share">The authors share</string>
 
     <string name="man_info">Level %d ranking %s points %d</string>
 
     <string name="no_data">No data</string>
+
+    <string name="app_name">Play Android</string>
+    <string name="enter_name">Please input Username</string>
+    <string name="enter_password">Please enter your password</string>
+
+    <string name="register_account">Register an account</string>
+    <string name="login">Log in</string>
+
+    <string name="no_browsing_history">There are currently no browsing history</string>
+    <string name="no_more_data">No more data</string>
+    <string name="Home">Home</string>
 </resources>
