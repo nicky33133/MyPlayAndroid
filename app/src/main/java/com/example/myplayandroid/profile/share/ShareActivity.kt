@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.lifecycle.MutableLiveData
 import com.example.model.model.CoinInfo
@@ -60,6 +61,13 @@ class ShareActivity : ArticleCollectBaseActivity(), View.OnClickListener {
         },{
             page++  //换行自动充当分隔符
             getArticleList()})
+
+        //返回，点击事件
+        val imgBack=binding.shareTitleBar.findViewById<ImageView>(R.id.imgBack)
+        imgBack.setOnClickListener {
+            finish()
+        }
+
     }
 
 

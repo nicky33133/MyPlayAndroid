@@ -41,11 +41,14 @@ class ArticleActivity : BaseActivity(), View.OnClickListener {
     override fun getLayoutView(): View {
 
        binding= ActivityArticleBinding.inflate(layoutInflater)
-        return binding.root
 
-        // ✅ 关键：为 ImageView 设置点击监听器
-        binding.articleImgBack.setOnClickListener(this)
+        // ✅ 关键：为 ImageView 设置点击监听
+        binding.articleImgBack.setOnClickListener(::onClick)
         Log.d(TAG, "onClick: zhi")
+
+        //return 语句后面的代码是死代码
+
+        return binding.root
     }
 
 
@@ -70,13 +73,14 @@ class ArticleActivity : BaseActivity(), View.OnClickListener {
         Log.d(TAG, "onClick: zhixing")
         if (v?.id == R.id.articleImgBack){
             if (binding.articleWebView.canGoBack()){
-                binding.articleWebView.goBack()
+                //articleWebView网页加载的控件
+                //为什么使用回退到上一页，因为网页可能打开多个，网页里面又打开了网页
+                binding.articleWebView.goBack()//WebView 后退到上一页
                 return
             }else{
                 finish()
             }
         }
-
         Log.d(TAG, "onClick: 执行")
     }
 

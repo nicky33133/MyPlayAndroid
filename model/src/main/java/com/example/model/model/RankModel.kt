@@ -14,6 +14,7 @@ data class RankData(
 
 
 
+
 data class Rank(
     //硬币数量
     val coinCount: Int,

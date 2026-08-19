@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +19,7 @@ import com.example.myplayandroid.profile.user.ProfileAdapter
 import com.example.myplayandroid.showToast
 import kotlin.compareTo
 
-class BrowseHistoryActivity : BaseListActivity() {
+class BrowseHistoryActivity : BaseListActivity(), View.OnClickListener{
 //布局用的是父布局的
     private val viewModel by viewModels<BrowseHistoryViewModel>()
     private lateinit var articleAdapter: ArticleAdapter
@@ -33,13 +35,25 @@ class BrowseHistoryActivity : BaseListActivity() {
 
         binding.baseListToTop.setAdapter(articleAdapter)
         binding.baseListTitleBar.setTitle(getString(R.string.browsing_history))
-
-
+        // 通过 TitleBar 找到内部的 imgBack
+        val imgBack=binding.baseListTitleBar.findViewById<ImageView>(R.id.imgBack)
+        imgBack.setOnClickListener {
+            finish()
+        }
     }
 
     private  val TAG = "BrowseHistoryActivity"
     override fun initData() {
         super.initData()
+
+        //给整体标题栏设置点击监听
+//        binding.baseListTitleBar.setOnClickListener {
+//            finish()
+//        }
+
+
+
+
         //观察数据
         viewModel.dataLiveData.observe(this){
             if (it.isSuccess){
@@ -85,6 +99,12 @@ class BrowseHistoryActivity : BaseListActivity() {
         }
         viewModel.getDataList(page)
 
+    }
+
+    override fun onClick(v: View?) {
+        if(v?.id == R.id.articleImgBack ){
+            finish() // ✅ 直接关闭当前 Activity，回到上一个页面
+        }
     }
 
     companion object{

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -59,6 +60,12 @@ class RankActivity : BaseListActivity() {
 //        <com.example.myplayandroid.base.ToTopRecyclerView
 //        android:id="@+id/baseListToTop"
         binding.baseListToTop.setAdapter(rankAdapter)
+
+        //返回
+        val imgBack = binding.baseListTitleBar.findViewById<ImageView>(R.id.imgBack)
+        imgBack.setOnClickListener {
+            finish()
+        }
     }
 
     companion object{

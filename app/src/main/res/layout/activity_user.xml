@@ -10,14 +10,14 @@
 
 
 
-    <TextView
-        android:layout_width="@dimen/dp_200"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dp_30"
-        android:text="this is me"
-        android:textColor="@color/grayWhite"
-        android:textSize="@dimen/sp_15" />
+<!--    <TextView-->
+<!--        android:layout_width="@dimen/dp_200"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="@dimen/dp_30"-->
+<!--        android:text="this is me"-->
+<!--        android:textColor="@color/grayWhite"-->
+<!--        android:textSize="@dimen/sp_15" />-->
 
     <com.example.core.view.custom.RoundImageView
         android:layout_width="@dimen/dp_200"

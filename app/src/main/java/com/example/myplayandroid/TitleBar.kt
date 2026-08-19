@@ -54,6 +54,8 @@ class TitleBar @JvmOverloads constructor(
         setBackImageVisible(backImageVisible ?: true)
         //如果左边的变量 backImageVisible 不为 null，就取它的值（true 或 false）。
         //如果左边的变量 为 null，就取右边的默认值 true
+
+//        binding.imgBack.setOnClickListener(::onClick)
     }
 
     fun setBackImageVisible(imageVisible: Boolean) {
